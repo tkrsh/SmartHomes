@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Demo's Smart Home</title>
+
+    <link rel="shortcut icon" type="image/png" href="https://github.com/tkrsh/tkrsh.github.io/blob/master/img/favicon.png?raw=true" />
+    <link rel="apple-touch-icon" href="https://github.com/tkrsh/tkrsh.github.io/blob/master/img/favicon.png?raw=true">
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Smart Home">
+
+</head>
+
+<body>
+
+
+
+
+    <h4>
+        <p class="z-depth-5 card-panel hoverable black white-text darken-2 "><i>Demo's Smart Home </i></p>
+    </h4>
+    <script>
+        $(document).ready(function() {
+            $('.collapsible').collapsible();
+        });
+    </script>
+    <script>
+        function calc(
+            a) {
+
+            if (document.getElementById(
+                    a).checked) {
+                console.log(`Switch off!  -> ${a}`);
+
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", `?state=True&switch=${a}`);
+
+                xmlHttp.send(null);
+                return xmlHttp.responseText;
+
+            } else {
+                console.log(`Switch off! -> ${a}`);
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", `?state=False&switch=${a}`);
+                xmlHttp.send(null);
+                return xmlHttp.responseText;
+
+            }
+        }
+    </script>
+
+
+
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header"><i class="material-icons">meeting_room</i>Top Floor Rooms</div>
+
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Room 1: Light</h6>
+                </div>
+
+                <label>
+                    Off
+                    {% if state == True %}
+                   
+                    
+                    <input type="checkbox" id="one" checked onclick="calc('one')">
+                    
+                    {% else %}
+                    <input type="checkbox" id="one" onclick="calc('one')">
+                    {% endif %}
+                    <span class="lever"></span>
+                    On
+                 
+               
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Room 1: Fan</h6>
+                </div>
+
+                <label>
+                    Off
+                    {% if state2 == True %}
+                   
+                    
+                  <input type="checkbox" id="two" checked onclick="calc('two')">
+                  
+                  {% else %}
+                  <input type="checkbox" id="two" onclick="calc('two')">
+                  {% endif %}
+                  <span class="lever"></span>
+                  On
+                </label>
+            </div>
+
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Room 2: Light</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="3"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Room 2: Fan</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="4"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">AC Room 1</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="5"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">AC Room 2</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="6"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+
+
+
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">meeting_room</i>Ground Floor Rooms</div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Room 1: Light</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="7"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Room 1: Fan</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="8"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Room 2: Light</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="9"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Room 2: Fan</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="10"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">AC Room 1</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="11"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">AC Room 2</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="12"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">kitchen</i>Kitchen </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Lights</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="13"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Fridge</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="14"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Chimney</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="15"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Microwave</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="16" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons"><span class="material-icons">
+            ramen_dining
+            </span></i>Dining Space </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Lights Left</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="17" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Left Fan</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="18" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Right Light</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="19" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Right Fan</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="17" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">chair</i>Drawing Room </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Fancy Lights </h6>
+                </div>
+
+                <label>
+                Off
+              <input id="21" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Main Lights</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="22" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Fan</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="23" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Cooler / AC</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="24" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+        </li>
+
+        <li>
+            <div class="collapsible-header"><i class="material-icons">bolt</i>Electrical Appliances </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Computer</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="25" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Heater</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="26" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">TV</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="27" type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Fridge</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="28"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">deck</i>Outdoor Lights</div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Main Lights</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="28"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Fancy Lights Pahse A</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="29"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Fancy Lights Pahse B</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="30"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+            <div class="right-align collapsible-body switch">
+                <div>
+                    <h6 class="left-align">Fan</h6>
+                </div>
+
+                <label>
+                Off
+              <input id="31"  type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+            </div>
+        </li>
+    </ul>
+    <script>
+        $(document).ready(function() {
+            $('.fixed-action-btn').floatingActionButton();
+        });
+    </script>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large black">
+            <i class="large material-icons">tune</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating black"><i class="material-icons">cloud_off</i></a></li>
+            <li><a class="btn-floating black darken-1"><i class="material-icons">router</i></a></li>
+            <li><a class="btn-floating black"><i class="material-icons">cloud_download</i></a></li>
+            <li><a class="btn-floating black" href="logout"><i class="material-icons"  href="localhost:8000/logout">logout</i></a></li>
+        </ul>
+    </div>
+    <ul class="collapsible popout ">
+        <li>
+            <div class="collapsible-header"><i class="material-icons">tune</i>Show Active Enrolled Sensors Status</div>
+            <div class="collapsible-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><a class="black-text text-darken-2"><u>Switch Name</u></a></th>
+                            <th><a class="black-text text-darken-2"><u>Switch State</u></a></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for switch in switches %}
+
+                        <tr>
+                            <td>{{switch.name}}</td>
+                            <td>{{switch.state}}</td>
+                        </tr>
+                        {% endfor %}
+
+
+
+
+                    </tbody>
+                </table>
+        </li>
+
+
+    </ul>
+
+    <div class="row">
+        <div class="col s19">
+
+
+            <a class="right-align waves-effect waves-light green btn white-text text-darken-4" href=""><i class="material-icons right ">sync</i>refresh</a>
+            <a class="right-align waves-effect waves-light grey darken-4 btn white-text text-darken-1" href=""><i class="material-icons right ">power_off</i>Blackout</a>
+            <a class="right-align waves-effect waves-light blue darken-4 btn white-text text-darken-1" href="http://localhost:8000/admin"><i class="material-icons right ">admin_panel_settings</i>Admin Console</a>
+
+        </div>
+    </div>
+    {% if messages %} {% for message in messages %}
+    <script>
+        M.toast({
+            html: "{{message}}",
+
+            displayLength: 2000
+        });
+    </script>
+    {% endfor %} {% endif %}
+
+    <!-- 
+    <footer class="page-footer black hoverable ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col l6 s12 ">
+                    <h5 class="white-text ">Info</h5>
+                    <p class="grey-text text-lighten-4 ">Frontend Blueprint</a>
+
+                    </p>
+                    <p class="grey-text text-lighten-4 ">
+
+                        Note : Temp layout is in developement phase.
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12 ">
+                    <h5 class="white-text ">More Info</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3 " href="https://www.tkrsh.com ">Who Am I?</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+
+
+
+
+    </footer> -->
+</body>
