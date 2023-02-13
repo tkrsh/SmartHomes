@@ -1,10 +1,15 @@
-### [SmartHome](https://smarthomes.tkrsh.com/)
+### [SmartHomeS](https://smarthomes.tkrsh.com/)
 
 A full stack webapp for smart home integration based on django framework 3.0
 
 Api to communicate with edge IOT Devices like Arduino, RaspPi for complete home automation
 
+## For Demo Login ->
 
+Usernmae -> demo@demo.com
+password -> demo1234
+
+[API For edge devices](https://smarthomes.tkrsh.com/out)
 
 ![login](login.png)
 
@@ -12,10 +17,6 @@ Api to communicate with edge IOT Devices like Arduino, RaspPi for complete home 
 
 ![Portal2](p2.png)
 
-## For Demo Login ->
-
-User -> demo@demo.com
-Password -> demo1234
 
 
 ## Upcoming Features
@@ -24,5 +25,5 @@ Password -> demo1234
     - Arduino Sketch and configs
 
 
-[API For edge devices](https://smarthomes.tkrsh.com/out)
+
  
